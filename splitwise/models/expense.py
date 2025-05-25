@@ -18,4 +18,4 @@ class Expense:
         self.description = description
         self.paid_by_user = paid_by_user
         self.split_type = split_type
-        self.split_details = list(split_details)  # copies the list
+        self.split_details = split_details

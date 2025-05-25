@@ -15,12 +15,12 @@ class Splitwise:
     def demo(self) -> None:
         self.setup_user_and_group()
 
-        # Step1: add members to the group
+        # add new users to the group
         group = self.group_controller.get_group("G1001")
         group.add_member(self.user_controller.get_user("U2001"))
         group.add_member(self.user_controller.get_user("U3001"))
 
-        # Step2: create an expense inside a group
+        # create an expense inside a group
         splits: List[Split] = [
             Split(self.user_controller.get_user("U1001"), 300),
             Split(self.user_controller.get_user("U2001"), 300),
@@ -38,21 +38,21 @@ class Splitwise:
             self.balance_sheet_controller.show_balance_sheet_of_user(user)
 
     def setup_user_and_group(self) -> None:
-        # Onboard user to splitwise app
+        # add new user to splitwise app
         self.add_users_to_splitwise_app()
 
-        # Create a group by user1
+        # create a group by user1
         user1 = self.user_controller.get_user("U1001")
         self.group_controller.create_new_group("G1001", "Outing with Friends", user1)
 
     def add_users_to_splitwise_app(self) -> None:
-        # Adding User1
+        # adding User1
         user1 = User("U1001", "User1")
 
-        # Adding User2
+        # adding User2
         user2 = User("U2001", "User2")
 
-        # Adding User3
+        # adding User3
         user3 = User("U3001", "User3")
 
         self.user_controller.add_user(user1)

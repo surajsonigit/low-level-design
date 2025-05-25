@@ -4,5 +4,4 @@ from .expense_split import ExpenseSplit
 
 class UnequalExpenseSplit(ExpenseSplit):
     def validate_split_request(self, split_list: List[Split], total_amount: float) -> None:
-        # Currently, no validation logic is provided.
         pass

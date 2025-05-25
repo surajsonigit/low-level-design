@@ -6,7 +6,7 @@ from models.user_expense_balance_sheet import UserExpenseBalanceSheet
 
 class BalanceSheetController:
     def update_user_expense_balance_sheet(self, expense_paid_by: User, splits: List[Split], total_expense_amount: float) -> None:
-        # Update the total amount paid by the user who paid the expense
+        # update the total amount paid by the user who paid the expense
         paid_by_user_expense_sheet: UserExpenseBalanceSheet = expense_paid_by.get_user_expense_balance_sheet()
         paid_by_user_expense_sheet.set_total_payment(paid_by_user_expense_sheet.get_total_payment() + total_expense_amount)
 
@@ -20,7 +20,7 @@ class BalanceSheetController:
                     paid_by_user_expense_sheet.get_total_your_expense() + owe_amount
                 )
             else:
-                # Update the balance of the user who paid
+                # update the balance of the user who paid
                 paid_by_user_expense_sheet.set_total_you_get_back(
                     paid_by_user_expense_sheet.get_total_you_get_back() + owe_amount
                 )
@@ -32,7 +32,7 @@ class BalanceSheetController:
 
                 user_owe_balance.set_amount_get_back(user_owe_balance.get_amount_get_back() + owe_amount)
 
-                # Update the balance sheet of the user who owes money
+                # update the balance sheet of the user who owes money
                 owe_user_expense_sheet.set_total_you_owe(owe_user_expense_sheet.get_total_you_owe() + owe_amount)
                 owe_user_expense_sheet.set_total_your_expense(owe_user_expense_sheet.get_total_your_expense() + owe_amount)
 
